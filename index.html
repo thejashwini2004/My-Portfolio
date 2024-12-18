@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: whitesmoke;
+}
+
+header {
+    background: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background: black;
+    color: blueviolet;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border:1px solid #007BFF ;
+}
+#profile-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 40%;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+    border: 1px solid #007BFF;
+    text-align: left;
+}
+section {
+    background:black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <a href="Index.html">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="biodata.html">Bio-data</a>
+        </nav>
+    </header>
+    <main>
+        <div class="profile-section" style="text-align: right;">
+            <img src="tejuu.jpg" alt="Profile Picture" id="profile-img">
+            
+        </div>
+        <section>
+            <h2>Hello!</h2>
+           <p><h3 style="color: blueviolet;"> I am Thejashwini</h3>A passionate web developer and software engineer. This portfolio showcases my skills, experience, and personal projects.
+            With expertise in both front-end and back-end development, I enjoy creating responsive, user-friendly websites and scalable applications. My goal is to solve real-world problems with effective and efficient digital solutions.
+Feel free to explore the Resume and Bio-data sections to learn more about my professional journey and personal background</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+    $("nav a").on("click", function (e) {
+        e.preventDefault();
+        alert("Navigating to " + $(this).text());
+    });
+});
+
+    </script>
+</body>
+</html>

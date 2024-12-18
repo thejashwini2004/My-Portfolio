@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio-data</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: rgb(208, 220, 225);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #007BFF;
+}
+
+.profile-section {
+    margin: 20px 0;
+}
+
+#profile-img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: fill;
+    border: 3px solid #007BFF;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: blueviolet;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+ul li strong {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><u>Bio-data</u></h1>
+        <div class="profile-section">
+            <img src="tejuu.jpg" alt="Profile Picture" id="profile-img">
+            <button id="change-photo-btn">Change Photo</button>
+        </div>
+        <ul>
+            <li><strong>Name:</strong> <span id="name">Thejashwini R</span></li>
+            <li><strong>Date of Birth:</strong> <span id="dob">November 12, 2004</span></li>
+            <li><strong>Gender:</strong> <span id="gender">Female</span></li>
+            <li><strong>Marital Status:</strong> <span id="marital-status">Single</span></li>
+            <li><strong>Address:</strong> <span id="address">123 Main Street, Basvan Gudi, bangalore</span></li>
+            <li><strong>Phone:</strong> <span id="phone">8657692152</span></li>
+            <li><strong>Email:</strong> <span id="email">Teju@gmail.com</span></li>
+            <li><strong>Nationality:</strong> <span id="nationality">Indian</span></li>
+            <li><strong>Languages Known:</strong> <span id="languages">English, Kannada,Telugu,Hindi</span></li>
+            <li><strong>Hobbies:</strong> <span id="hobbies">Reading, Traveling, Photography,Cooking</span></li>
+            <li><strong>Education Qualifications:</strong><span id="education Qualifications">B.E in computer Science and Engineering at CEC,
+                Done Internship on web development</span></li>
+                <li><strong>Technical Skills:</strong> <span id="Skills">oops with java , MERN technoloy for web development and Database</span></li>
+    
+        </ul>
+        <button id="edit-btn">Edit Bio-data</button>
+    </div>
+    <footer>
+        &copy; 2024 Thejashwini. All Rights Reserved.
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const editButton = document.getElementById("edit-btn");
+    const changePhotoButton = document.getElementById("change-photo-btn");
+    const profileImg = document.getElementById("profile-img");
+
+    // Edit bio-data functionality
+    editButton.addEventListener("click", () => {
+        const editableFields = [
+            "name",
+            "dob",
+            "gender",
+            "marital-status",
+            "address",
+            "phone",
+            "email",
+            "nationality",
+            "languages",
+            "hobbies",
+
+        ];
+
+        editableFields.forEach((fieldId) => {
+            const field = document.getElementById(fieldId);
+            const currentText = field.textContent;
+            const newText = prompt(`Edit ${fieldId.replace("-", " ")}:`, currentText);
+            if (newText !== null && newText.trim() !== "") {
+                field.textContent = newText.trim();
+            }
+        });
+    });
+
+    // Change profile photo functionality
+    changePhotoButton.addEventListener("click", () => {
+        const newPhotoUrl = prompt("Enter the URL of the new profile photo:");
+        if (newPhotoUrl) {
+            profileImg.src = newPhotoUrl;
+        }
+    });
+});
+
+    </script>
+</body>
+</html>
